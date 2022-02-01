@@ -1,5 +1,6 @@
 //to get current date and time
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let dayIndex = date.getDay();
   let days = [
     "Sunday",
@@ -23,14 +24,8 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  return `Last updated at: ${day}, ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
 }
-
-let currentTime = new Date();
-
-//to change the HTML to current date & time
-let dateElement = document.querySelector("#date");
-dateElement.innerHTML = formatDate(currentTime);
 
 //form listens for city input
 let searchForm = document.querySelector("#search-form");
@@ -70,31 +65,29 @@ cel.addEventListener("click", tempC);
 
 //retrieves weather data (temp, description, etc.) from city entered & updates the HTML
 function retrieveWeatherData(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   console.log(Math.round(response.data.main.temp));
   let searchCityTemperature = document.querySelector("#temperature");
   searchCityTemperature.innerHTML = temperature;
 
   let weatherDescription = response.data.weather[0].description;
-  console.log(response.data.weather[0].description);
   let retrieveWeatherDescription = document.querySelector("#description");
   retrieveWeatherDescription.innerHTML = weatherDescription;
 
   let feelsLike = Math.round(response.data.main.feels_like);
-  console.log(Math.round(response.data.main.feels_like));
   let retrieveFeelsLike = document.querySelector("#feels-like");
   retrieveFeelsLike.innerHTML = feelsLike;
 
   let humidity = response.data.main.humidity;
-  console.log(response.data.main.humidity);
   let retrieveHumidity = document.querySelector("#humidity");
   retrieveHumidity.innerHTML = humidity;
 
   let windSpeed = Math.round(response.data.wind.speed);
-  console.log(Math.round(response.data.wind.speed));
   let retrieveWindSpeed = document.querySelector("#wind");
   retrieveWindSpeed.innerHTML = windSpeed;
+
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 //uses geolocation to retrieve location of user from API
