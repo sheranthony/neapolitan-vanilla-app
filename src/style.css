@@ -17,6 +17,11 @@ li {
   font-weight: 100;
   font-family: "Thasadith", sans-serif;
 }
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
 .weather-wrap {
   max-width: 600px;
   margin: 40px auto;
