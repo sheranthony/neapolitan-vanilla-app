@@ -53,17 +53,6 @@ li:first-letter {
   margin-bottom: 20px;
 }
 
-.weather-forecast {
-  font-family: "Thasadith", sans-serif;
-  text-align: center;
-  color: gray;
-}
-
-.forecast-temperature {
-  font-family: "Thasadith", sans-serif;
-  line-height: 50px;
-}
-
 .weather-icon {
   height: 64px;
   width: 64px;
