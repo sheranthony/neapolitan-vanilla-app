@@ -69,3 +69,13 @@ li:first-letter {
   width: 64px;
   margin-right: 10px;
 }
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
