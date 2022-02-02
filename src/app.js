@@ -48,25 +48,33 @@ function search(event) {
 //to toggle the displayed temperature between Fahrenheit and Celsius
 function tempF(event) {
   event.preventDefault();
-  let tempF = document.querySelector(".temperature");
-  tempF.innerHTML = "54";
+  fahr.classList.add("active");
+  cel.classList.remove("active");
+  let tempF = document.querySelector("#temperature");
+  tempF.innerHTML = Math.round(fahrenheitTemperature);
 }
-let fahr = document.querySelector("#fahrenheit-link");
-fahr.addEventListener("click", tempF);
 
 function tempC(event) {
   event.preventDefault();
-  let tempC = document.querySelector(".temperature");
-  let temperature = tempC.innerHTML;
-  tempC.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  let tempC = document.querySelector("#temperature");
+  fahr.classList.remove("active");
+  cel.classList.add("active");
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  tempC.innerHTML = Math.round(celsiusTemperature);
 }
+let fahrenheitTemperature = null;
+
+let fahr = document.querySelector("#fahrenheit-link");
+fahr.addEventListener("click", tempF);
+
 let cel = document.querySelector("#celsius-link");
 cel.addEventListener("click", tempC);
 
 //retrieves weather data (temp, description, etc.) from city entered & updates the HTML
 function retrieveWeatherData(response) {
-  let temperature = Math.round(response.data.main.temp);
-  console.log(Math.round(response.data.main.temp));
+  fahrenheitTemperature = response.data.main.temp;
+
+  let temperature = Math.round(fahrenheitTemperature);
   let searchCityTemperature = document.querySelector("#temperature");
   searchCityTemperature.innerHTML = temperature;
 
