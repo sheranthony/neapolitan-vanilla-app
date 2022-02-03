@@ -5,6 +5,10 @@ h1 {
   line-height: 30px;
 }
 
+body {
+  font-family: "Thasadith", sans-serif;
+}
+
 ul {
   list-style-type: none;
   margin: 0 0 10px;
@@ -15,7 +19,6 @@ li {
   color: gray;
   font-size: 16px;
   font-weight: 100;
-  font-family: "Thasadith", sans-serif;
 }
 
 li:first-letter {
@@ -39,8 +42,6 @@ li:first-letter {
   font-size: 50px;
   font-weight: 400;
   line-height: normal;
-
-  font-family: "Thasadith", sans-serif;
 }
 
 .units {
@@ -67,4 +68,24 @@ li:first-letter {
 
 .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  color: gray;
+}
+
+.forecast-date {
+  font-size: 16px;
+  color: black;
+  opacity: 0.6;
+}
+
+.forecast-temperature {
+  font-size: 14px;
+}
+
+.weather-forecast-min-temp {
+  opacity: 0.5;
 }
