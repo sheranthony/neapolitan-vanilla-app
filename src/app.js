@@ -38,12 +38,17 @@ function search(event) {
   cityElement.innerHTML = "Paris";
   let cityInput = document.querySelector("#city-search");
   cityElement.innerHTML = `${cityInput.value}`;
-  let searchCity = `${cityInput.value}`;
+  searchCity(cityInput.value);
+}
+
+function searchCity(cityName) {
   let apiKey = "6dd5f17fed631783ad85c6476c8b5d40";
   let units = "imperial";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+searchCity("Brooklyn");
 
 //to toggle the displayed temperature between Fahrenheit and Celsius
 function tempF(event) {
