@@ -104,3 +104,26 @@ function retrieveWeatherData(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="forecast-date">${day}</div>
+                <img src="images/partly_cloudy.svg" alt width="40" />
+                <div class="forecast-temperature">
+                  <span class="weather-forecast-max-temp">42° </span>
+                  <span class="weather-forecast-min-temp">31° </span>
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `<div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
