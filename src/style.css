@@ -66,6 +66,7 @@ li:first-letter {
 .btn {
   background: #b8c5f7;
   font-size: 16px;
+  color: white;
   border: none;
   padding-left: 20px;
   padding-right: 20px;
@@ -74,6 +75,7 @@ li:first-letter {
 .btn:hover {
   transition: all 200ms ease-in-out;
   background: #b8e4f7;
+  color: white;
 }
 
 .search-form {
