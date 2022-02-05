@@ -1,12 +1,18 @@
-h1 {
-  color: #6fd6d5;
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 30px;
+html {
+  height: 100%;
 }
 
 body {
   font-family: "Thasadith", sans-serif;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  width: 100%;
+}
+
+h1 {
+  color: #b8c5f7;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 30px;
 }
 
 ul {
@@ -34,6 +40,7 @@ li:first-letter {
   border: 1px solid #dadde1;
   padding: 40px;
   border-radius: 15px;
+  background: white;
 }
 .temperature {
   position: relative;
@@ -48,6 +55,25 @@ li:first-letter {
   position: relative;
   top: -84px;
   left: 78px;
+}
+
+.form-control {
+  background-color: #b8e4f7;
+  border-color: #b8e4f7;
+  opacity: 0.5;
+}
+
+.btn {
+  background: #b8c5f7;
+  font-size: 16px;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn:hover {
+  transition: all 200ms ease-in-out;
+  background: #b8e4f7;
 }
 
 .search-form {
@@ -88,4 +114,8 @@ li:first-letter {
 
 .weather-forecast-min-temp {
   opacity: 0.5;
+}
+
+.line-break {
+  opacity: 0.1;
 }
